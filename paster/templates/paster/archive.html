@@ -1,0 +1,26 @@
+{% extends "paster/base.html" %}
+
+{% block body %}
+
+
+    {% include "paster/showPastesList.html" %}
+
+    <!-- Fancy pagination stuff -->
+    <nav aria-label="Page navigation">
+    <ul class="pager">
+        {% if contacts.has_previous %}
+            <li class="previous"><a href="{{ contacts.previous_page_number }}"><span aria-hidden="true">&larr;</span> Prev</a></li>
+        {% endif %}
+
+        Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}
+
+
+        {% if contacts.has_next %}
+
+            <li class="next"><a href="{{ contacts.next_page_number }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+        {% endif %}
+    </ul>
+    </nav>
+
+
+{% endblock body %}

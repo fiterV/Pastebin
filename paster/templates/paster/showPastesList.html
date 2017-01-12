@@ -1,0 +1,11 @@
+<div class="list-group">
+        {% for i in pastes %}
+            <a href="http://{{ hostname }}/{{ i.shortcode }}" class="list-group-item">
+
+                <!--<span class="badge">{{ i.pk }}</span>-->
+                <h5 class="list-group-item-heading">{{ i.title }}</h5>
+                <p class="list-group-item-text">{{ i.date }}</p>
+
+            </a>
+        {% endfor %}
+</div>

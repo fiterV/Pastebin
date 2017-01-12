@@ -1,0 +1,27 @@
+{% extends "paster/base.html" %}
+
+{% block title %} Paste it {% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10">
+
+                <form method="POST" action=".">
+                    {% csrf_token %}
+                        <input class="form-control" type="text" name="title">
+                    <textarea class="vLargeTextField col-lg-10 form-control" id="id_text" name="text" rows="25"></textarea>
+                        <input class="btn btn-primary form-control" type="submit" value="Paste">
+
+                </form>
+
+        </div>
+        <div class="col-lg-2">
+         {% include "paster/showPastesList.html" %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+

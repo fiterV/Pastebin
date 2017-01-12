@@ -1,0 +1,25 @@
+{% extends "paster/base.html" %}
+
+{% block title %} Paste it {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+    <h3>{{ title }}</h3>
+    <div class="row">
+    {{ text.size }}
+    <div class="col-lg-10">
+        <textarea class="vLargeTextField col-lg-10 form-control" id="id_text" name="text" rows="25" disabled>{{ text }}</textarea>
+
+    </div>
+
+        <div class="col-lg-2">
+         {% include "paster/showPastesList.html" %}
+        </div>
+    </div>
+
+    </div>
+
+</div>
+
+{% endblock body %}
+

@@ -57,5 +57,6 @@ class Archive(View):
         context = {
             'pastes': contacts,
             'contacts' : contacts,
+	    'hostname' : request.get_host(),
         }
         return render(request, "paster/archive.html", context)
